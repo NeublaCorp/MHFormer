@@ -1,3 +1,21 @@
+# Quick start for Neublan
+
+## Set symlink to dataset and models on NAS
+
+The preprocessed Human3.6M dataset and offical pretrained models are stored on the NAS.
+```bash
+# Go to the MHFormer directory
+cd /workspace/dev/neubla_mlp/src/ml/pytorch/3D_HPE/MHFormer/
+# Set symlink to dataset
+ln -s /inshared/DataSet/Human3.6M/dataset dataset
+# Set symlink to models
+ln -s /inshared/Model/vision/pose_estimation/MHFormer checkpoint/pretrained
+```
+## Test the model
+```bash
+python main.py --test --previous_dir 'checkpoint/pretrained/351' --frames 351
+```
+
 # MHFormer: Multi-Hypothesis Transformer for 3D Human Pose Estimation [CVPR 2022]
 
 <p align="center"><img src="figure/pipline.jpg" width="100%" alt="" /></p>
